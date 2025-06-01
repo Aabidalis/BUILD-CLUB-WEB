@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (readMoreBtn) {
         readMoreBtn.addEventListener('click', function() {
             // Navigate to the details page
-            window.location.href = 'achievements-detail.html';
+            window.location.href = '/acievement/';
         });
     }
     
