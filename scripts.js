@@ -304,6 +304,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // for past events
 /* JavaScript for animations and interactions */
 document.addEventListener('DOMContentLoaded', function() {
