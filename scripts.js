@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h1 id="eventTitle" class="event-title">Event Title</h1>
         <p id="eventDate" class="event-date">Event Date</p>
         
-        <img id="eventImage" src="upcomming/image.png" alt="Event Image" class="event-image">
+        <img id="eventImage" src="/assets/upcomming/image.png" alt="Event Image" class="event-image">
         
         <div class="event-description" id="eventDescription">
             <!-- Event description will be populated by JavaScript -->
