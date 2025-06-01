@@ -633,6 +633,6 @@ footer {
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
     opacity: 0;
-     box-shadow: 0 0 8px #ff6b00, 0 0 15px #ff6b00;
-     z-index: 9999;
+    box-shadow: 0 0 8px #ff6b00, 0 0 15px #ff6b00;
+    z-index: 9999;
 }
