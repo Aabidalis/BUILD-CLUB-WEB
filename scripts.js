@@ -179,25 +179,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 schedule = `
                     <p><strong>Day 1 (June 15):</strong><br>
-                    9:00 AM - Registration and Team Setup<br>
-                    10:00 AM - Opening Ceremony and Rules Briefing<br>
-                    11:00 AM - Preliminary Round Begins<br>
-                    1:00 PM - Lunch Break<br>
-                    2:00 PM - Technical Workshops<br>
-                    5:00 PM - Day 1 Concludes</p>
+                    8:30 AM - Reporting time <br>
+                    10:00 AM - Opening Ceremony <br>
+                    11:00 AM - Project evaluation <br>
+                    1:30 PM -  Event closing time<br>
+                    </p>
                     
-                    <p><strong>Day 2 (June 16):</strong><br>
-                    9:00 AM - Semi-Finals<br>
-                    12:00 PM - Lunch Break<br>
-                    1:00 PM - Finals<br>
-                    3:00 PM - Industry Speaker Panel<br>
-                    4:30 PM - Awards Ceremony<br>
-                    5:30 PM - Networking Reception</p>
+                     
                 `;
                 
                 registrationInfo = `
-                    <p>Registration opens May 1st, 2025 and closes June 1st, 2025.</p>
-                    <p><strong>Registration Fee:</strong> ₹25 per team (3-5 members)</p>
+                    <p>Registration opens june 06th, 2025 and closes June 26th, 2025.</p>
+                    <p><strong>Registration Fee:</strong> ₹250 per team (2-4 members)</p>
                     <p><strong>What's Included:</strong> Competition entry, workshop access, lunch on both days, and BUILD CLUB merchandise.</p>
                     <p><strong>Required Materials:</strong> Teams should bring their own laptops and basic tools. Core robotics components will be provided to all teams.</p>
                 `;
