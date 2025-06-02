@@ -191,8 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 registrationInfo = `
                     <p>Registration opens june 06th, 2025 and closes June 26th, 2025.</p>
                     <p><strong>Registration Fee:</strong> ₹250 per team (2-4 members)</p>
-                    <p><strong>What's Included:</strong> Competition entry, workshop access, lunch on both days, and BUILD CLUB merchandise.</p>
-                    <p><strong>Required Materials:</strong> Teams should bring their own laptops and basic tools. Core robotics components will be provided to all teams.</p>
+
                 `;
             } else { // Second event (Drone Design Workshop)
                 fullDescription = briefDesc + " This intensive one-day workshop will provide a comprehensive introduction to drone technology and design principles. Participants will learn about aerodynamics, electronics, control systems, and programming fundamentals that make drones function. By the end of the day, each participant will have built their own mini-drone to take home.";
