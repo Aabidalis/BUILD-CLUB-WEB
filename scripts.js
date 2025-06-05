@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Registration info will be populated by JavaScript -->
             </div>
         </div>
-        
-        <button class="register-button">Register Now</button>
+
+      <a href="www.google.com"  <button class="register-button">Register Now</button></a>
     `;
     
     // Get all read more buttons
