@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
 
-      <a href="www.google.com"  <button class="register-button">Register Now</button></a>
+        <button class="register-button">Register Now</button>
     `;
     
     // Get all read more buttons
@@ -238,9 +238,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Registration button functionality
-            document.querySelector('.register-button').addEventListener('click', function() {
-                alert('Registration will open soon! Please check back later.');
-            });
+          // Registration button functionality
+document.querySelector('.register-button').addEventListener('click', function() {
+    const formURL = 'https://google.com'; // Replace with your actual Google Form link
+    window.open(formURL, '_blank');
+});
+
         });
     });
     
