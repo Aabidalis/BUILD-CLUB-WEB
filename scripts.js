@@ -175,22 +175,44 @@ document.addEventListener('DOMContentLoaded', function () {
             let fullDescription, schedule, registrationInfo;
 
             if (index === 0) { // First event (Annual Robotics Challenge)
-                fullDescription = briefDesc + " The Annual Robotics Challenge is our flagship event where innovation meets competition. This year's theme focuses on sustainable automation, challenging participants to create robots that can tackle real-world environmental problems. The competition will be held over two days with preliminary rounds, workshops, networking sessions, and final demonstrations.";
+                fullDescription = briefDesc + " This year's challenge calls on university students to design and build sustainable automation solutions using microcontroller-based systems. Whether you're a beginner or a seasoned builder, this is your chance to create, compete, and collaborate.";
 
                 schedule = `
-                    <p><strong>Day 1 (June 15):</strong><br>
-                    8:30 AM - Reporting time <br>
-                    10:00 AM - Opening Ceremony <br>
-                    11:00 AM - Project evaluation <br>
-                    1:30 PM -  Event closing time<br>
+                    <p>  
+                    📅 Date: June 28, 2025 <br>
+📍 Venue: A-Block, Ground Floor<br>
+🕘 Reporting Time: 9:00 AM
                     </p>
-                    
+<br>
+<br>
+
+
+                    <p> <b>🎯 What to Expect <b/><br> <br>
+                        Real-world automation challenges
+Live demonstrations and project evaluations
+Collaboration, innovation, and hands-on building
+Prizes and recognition for the most impactful solutions
+ 
+<br> <br>
+
+<br>
+
+📋 Rules & Guidelines <br><br>
+
+🔧 Team Size: 2-4 members<br>
+💰 Max Budget Limit: ₹7000 per team<br>
+💡 Mandatory Use: Arduino, Raspberry Pico, ESP32, or other microcontrollers<br>
+🧠 Judging based on originality, creativity, and sustainability<br>
+
+
+
+                    </p>
                      
                 `;
 
                 registrationInfo = `
-                    <p>Registration opens june 06th, 2025 and closes June 26th, 2025.</p>
-                    <p><strong>Registration Fee:</strong> ₹250 per team (2-4 members)</p>
+                    <p>Registration Open June 06th, 2025<br> Closing June 26th, 2025.</p> <br>
+                    <p><strong>Registration Fee:</strong> ₹300 per team (2-4 Members)</p>
 
                 `;
             } else { // Second event (Drone Design Workshop)
