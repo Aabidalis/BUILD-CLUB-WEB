@@ -745,13 +745,15 @@ hr{
 /* past events */
 /* Past Events Section Styling */
 .past-events {
-    padding: 80px 8%;
-    background-color: black;
+    padding: 80px 10%;
+    background-color: rgb(3, 3, 3);
     position: relative;
-    /* width: 100%; */
+    max-width: 100%;
     color: white;
     display: flex;
+    
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 
