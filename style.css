@@ -751,9 +751,10 @@ hr{
     max-width: 100%;
     color: white;
     display: flex;
-    
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: flex-start;
+    
 }
 
 
@@ -778,14 +779,14 @@ hr{
     height: 4px;
     background-color: #ff6b00; /* Orange underline matching other sections */
 }
-
+ 
  
 
 /* Events Row Layout */
 .events-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 25px; /* Space between event cards */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
