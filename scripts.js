@@ -4,7 +4,7 @@ let currentX = 0, currentY = 0;
 let hideTimeout;
 
 // Track mouse position
-document.addEventListener("mousemove", function(e) {
+document.addEventListener("mousemove", function (e) {
     // Update mouse position
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -43,15 +43,15 @@ animateCursor();
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     function checkIfInView() {
         const heroSection = document.querySelector('.hero-section');
         const heading = document.querySelector('.banner-image h1');
         const paragraph = document.querySelector('.banner-image p');
-        
+
         const elementTop = heroSection.getBoundingClientRect().top;
         const elementVisible = 150;
-        
+
         if (elementTop < window.innerHeight - elementVisible) {
             heading.classList.add('animated');
             paragraph.classList.add('animated');
@@ -61,20 +61,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get page elements
     const eventsSection = document.querySelector('.upcoming-events');
     const heroSection = document.querySelector('.hero-section');
     const header = document.querySelector('header'); // Assuming there's a header element
-    
+
     // Get/create other page sections that should be hidden when showing event details
     const pageSections = document.querySelectorAll('body > div:not(header)');
-    
+
     // Create event details container (initially hidden)
     const eventDetailsContainer = document.createElement('div');
     eventDetailsContainer.className = 'event-details-container';
     eventDetailsContainer.style.display = 'none';
-    
+
     // Insert the details container after the header (or at the start of body if no header)
     if (header) {
         header.insertAdjacentElement('afterend', eventDetailsContainer);
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    
+
     // HTML template for event details
     const eventDetailsTemplate = `
         <a href="#" class="back-button">← Back to Home</a>
@@ -124,10 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <button class="register-button">Register Now</button>
     `;
-    
+
     // Get all read more buttons
     const readMoreButtons = document.querySelectorAll('.event-details button');
-    
+
     // Function to hide all page sections except header
     function hidePageSections() {
         pageSections.forEach(section => {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Function to show all page sections
     function showPageSections() {
         pageSections.forEach(section => {
@@ -145,38 +145,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Add click event to each read more button
     readMoreButtons.forEach((button, index) => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.stopPropagation(); // Prevent event bubbling
-            
+
             // Get the event details from the parent elements
             const card = button.closest('.event-card');
             const title = card.querySelector('h3').textContent;
             const date = card.querySelector('.event-date').textContent;
             const briefDesc = card.querySelector('p:not(.event-date)').textContent;
-            
+
             // Hide all page sections except header
             hidePageSections();
-            
+
             // Show and populate the event details container
             eventDetailsContainer.innerHTML = eventDetailsTemplate;
             eventDetailsContainer.style.display = 'block';
-            
+
             // Populate the basic event information
             document.getElementById('eventTitle').textContent = title;
             document.getElementById('eventDate').textContent = date;
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
-            
+
             // Create more detailed content based on the event
             let fullDescription, schedule, registrationInfo;
-            
+
             if (index === 0) { // First event (Annual Robotics Challenge)
                 fullDescription = briefDesc + " The Annual Robotics Challenge is our flagship event where innovation meets competition. This year's theme focuses on sustainable automation, challenging participants to create robots that can tackle real-world environmental problems. The competition will be held over two days with preliminary rounds, workshops, networking sessions, and final demonstrations.";
-                
+
                 schedule = `
                     <p><strong>Day 1 (June 15):</strong><br>
                     8:30 AM - Reporting time <br>
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                      
                 `;
-                
+
                 registrationInfo = `
                     <p>Registration opens june 06th, 2025 and closes June 26th, 2025.</p>
                     <p><strong>Registration Fee:</strong> ₹250 per team (2-4 members)</p>
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             } else { // Second event (Drone Design Workshop)
                 fullDescription = briefDesc + " This intensive one-day workshop will provide a comprehensive introduction to drone technology and design principles. Participants will learn about aerodynamics, electronics, control systems, and programming fundamentals that make drones function. By the end of the day, each participant will have built their own mini-drone to take home.";
-                
+
                 schedule = `
                     <p><strong>Workshop Schedule (July 8):</strong><br>
                     9:00 AM - Check-in and Materials Distribution<br>
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     5:00 PM - Test Flight and Troubleshooting<br>
                     6:00 PM - Workshop Concludes</p>
                 `;
-                
+
                 registrationInfo = `
                     <p>Registration opens June 1st, 2025 and closes July 1st, 2025 or when all spots are filled.</p>
                     <p><strong>Registration Fee:</strong> $40 per participant</p>
@@ -217,77 +217,77 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>Capacity:</strong> Limited to 30 participants to ensure quality instruction.</p>
                 `;
             }
-            
+
             // Set the content
             document.getElementById('eventDescription').innerHTML = fullDescription;
             document.getElementById('eventSchedule').innerHTML = schedule;
             document.getElementById('registrationInfo').innerHTML = registrationInfo;
-            
+
             // Back button functionality
-            document.querySelector('.back-button').addEventListener('click', function(e) {
+            document.querySelector('.back-button').addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 // Hide the event details
                 eventDetailsContainer.style.display = 'none';
-                
+
                 // Show all the other page sections
                 showPageSections();
-                
+
                 // Scroll back to events section
                 eventsSection.scrollIntoView({ behavior: 'smooth' });
             });
-            
+
             // Registration button functionality
-          // Registration button functionality
-document.querySelector('.register-button').addEventListener('click', function() {
-    const formURL = 'https://google.com'; // Replace with your actual Google Form link
-    window.open(formURL, '_blank');
-});
+            // Registration button functionality
+            document.querySelector('.register-button').addEventListener('click', function () {
+                const formURL = 'https://google.com'; // Replace with your actual Google Form link
+                window.open(formURL, '_blank');
+            });
 
         });
     });
-    
+
     // Add hover effect to event cards (but NOT click effect)
     const eventCards = document.querySelectorAll('.event-card');
-    
+
     eventCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             // Add a subtle scale effect
             this.style.transform = 'scale(1.02)';
             this.style.boxShadow = '0 15px 30px rgba(255, 107, 0, 0.15)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             // Remove the scale effect
             this.style.transform = 'scale(1)';
             this.style.boxShadow = 'none';
         });
-        
+
         // Removed the card click handler completely - only buttons will trigger the read more
     });
-    
+
     // Animate cards when they come into view
     function checkForAnimation() {
         const cards = document.querySelectorAll('.event-card');
-        
+
         cards.forEach(card => {
             const cardTop = card.getBoundingClientRect().top;
             const triggerBottom = window.innerHeight * 0.8;
-            
+
             if (cardTop < triggerBottom) {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
             }
         });
     }
-    
+
     // Set initial state for animation
     eventCards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
-    
+
     // Check on scroll and on load
     window.addEventListener('scroll', checkForAnimation);
     checkForAnimation(); // Check on load
@@ -314,10 +314,10 @@ document.querySelector('.register-button').addEventListener('click', function() 
 
 // for past events
 /* JavaScript for animations and interactions */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get all past event elements
     const pastEvents = document.querySelectorAll('.past-events .event');
-    
+
     // Create intersection observer to trigger animations when events come into view
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
         threshold: 0.2 // Trigger when 20% of the element is visible
     });
-    
+
     // Set initial state and observe each event
     pastEvents.forEach((event, index) => {
         // Set initial opacity to 0
@@ -341,19 +341,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start observing
         observer.observe(event);
     });
-    
+
     // Add hover effect for event cards
     pastEvents.forEach(event => {
         event.addEventListener('mouseenter', () => {
             // Add custom hover class or effect if needed
             event.classList.add('event-hover');
         });
-        
+
         event.addEventListener('mouseleave', () => {
             event.classList.remove('event-hover');
         });
     });
-    
+
     // Fix for container layout if needed
     const pastEventsContainer = document.querySelector('.past-events');
     if (pastEventsContainer) {
@@ -361,14 +361,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const title = pastEventsContainer.querySelector('h2:first-child');
         const eventsWrapper = document.createElement('div');
         eventsWrapper.className = 'events-wrapper';
-        
+
         // Move all events into the wrapper
         Array.from(pastEventsContainer.children).forEach(child => {
             if (child !== title) {
                 eventsWrapper.appendChild(child);
             }
         });
-        
+
         // Add the wrapper to the container after the title
         pastEventsContainer.appendChild(eventsWrapper);
     }
@@ -376,56 +376,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // for our achivement 
-  
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
     // Add click event listener to the Read more button
     const readMoreBtn = document.getElementById('read-more-btn');
-    
+
     if (readMoreBtn) {
-        readMoreBtn.addEventListener('click', function() {
+        readMoreBtn.addEventListener('click', function () {
             // Navigate to the details page
             window.location.href = '/acievement/';
         });
     }
-    
+
 });
-        
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const teamMembers = document.querySelectorAll('.team-member');
-            
-            const fadeInOptions = {
-                threshold: 0.3,
-                rootMargin: "0px 0px -100px 0px"
-            };
-            
-            const fadeInOnScroll = new IntersectionObserver((entries, fadeInOnScroll) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        fadeInOnScroll.unobserve(entry.target);
-                    }
-                });
-            }, fadeInOptions);
-            
-            teamMembers.forEach(member => {
-                member.style.opacity = 0;
-                member.style.transform = 'translateY(30px)';
-                member.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                fadeInOnScroll.observe(member);
-            });
+
+// Animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const teamMembers = document.querySelectorAll('.team-member');
+
+    const fadeInOptions = {
+        threshold: 0.3,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const fadeInOnScroll = new IntersectionObserver((entries, fadeInOnScroll) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                fadeInOnScroll.unobserve(entry.target);
+            }
         });
-    
+    }, fadeInOptions);
+
+    teamMembers.forEach(member => {
+        member.style.opacity = 0;
+        member.style.transform = 'translateY(30px)';
+        member.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        fadeInOnScroll.observe(member);
+    });
+});
 
 
- 
 
 
 
-        window.onbeforeunload = function () {
+
+
+window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
 
