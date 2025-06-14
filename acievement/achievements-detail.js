@@ -1,48 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function() {
-    // Add cursor glow effect
-    // const cursorGlow = document.querySelector('.cursor-glow');
-    
-    // if (cursorGlow) {
-    //     document.addEventListener('mousemove', function(e) {
-    //         cursorGlow.style.left = e.clientX + 'px';
-    //         cursorGlow.style.top = e.clientY + 'px';
-    //     });
-    // }
-    
-    // Add active-border class to detailed-achievements for animated border effect
-    // const achievementsSection = document.querySelector('.detailed-achievements');
-    // if (achievementsSection) {
-    //     achievementsSection.classList.add('active-border');
-    // }
-    
-    // Add image zoom effect on gallery hover
-    // const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    // galleryItems.forEach(item => {
-    //     item.addEventListener('mouseenter', function() {
-    //         this.querySelector('img').style.transform = 'scale(1.1)';
-    //         this.querySelector('.overlay').style.transform = 'translateY(0)';
-    //     });
-        
-    //     item.addEventListener('mouseleave', function() {
-    //         this.querySelector('img').style.transform = 'scale(1)';
-    //         this.querySelector('.overlay').style.transform = 'translateY(100%)';
-    //     });
-    // });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
 let cursor = document.querySelector(".cursor");
 let mouseX = 0, mouseY = 0;
 let currentX = 0, currentY = 0;
@@ -76,3 +31,31 @@ function animateCursor() {
 }
 
 animateCursor();
+
+
+
+// Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+ 
