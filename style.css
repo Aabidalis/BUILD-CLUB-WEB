@@ -299,6 +299,7 @@ span{
 .banner-image p {
     font-size: 1.3rem;
     color: #ffffff;
+    text-align: justify;
     line-height: 1.8;
     max-width: 60%;
     position: relative;
@@ -564,6 +565,11 @@ span{
     min-height: 100vh; /* Ensure it takes at least the full viewport height */
 }
 
+
+.event-card p{
+    text-align: justify;
+}
+
 .back-button {
     display: inline-block;
     margin-bottom: 30px;
@@ -804,8 +810,8 @@ hr{
 
 /* Gallery Items */
 .gallery-item {
-    width: 300px;
-    height: 200px;
+    width: 380px;
+    height: 280px;
     overflow: hidden;
     border-radius: 10px;
     position: relative;
@@ -989,6 +995,7 @@ hr{
     padding: 0 25px 30px;
     margin: 0;
     background-color: transparent;
+    text-align: justify;
 }
 
 /* Animations */
@@ -1125,6 +1132,7 @@ hr{
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  background: none;
 }
 
 .why-join-us strong {
@@ -1197,6 +1205,7 @@ hr{
   justify-content: space-between;
   margin-top: 40px;
   gap: 30px;
+  background: none;
 }
 
 /* Image styling */
@@ -1221,6 +1230,8 @@ hr{
   text-align: left;
   max-width: 45%;
   padding: 0 15px;
+  text-align: justify;
+  background: none;
 }
 
 /* Button styling */

@@ -276,6 +276,7 @@ nav ul li a {
     color: #ccc;
     line-height: 1.6;
     background-color: #111;
+    text-align: justify;
 }
 
 /* Hover Effects */
