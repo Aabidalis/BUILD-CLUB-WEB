@@ -65,3 +65,38 @@ animateCursor();
                 navMenu.classList.remove('active');
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+            // Get the container for the "More Members" cards
+            const moreMembersGrid = document.getElementById('moreMembersGrid');
+            if (moreMembersGrid) {
+                // Get all the member cards as an array
+                let memberCards = Array.from(moreMembersGrid.children);
+
+                // Fisher-Yates (Knuth) shuffle algorithm
+                for (let i = memberCards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [memberCards[i], memberCards[j]] = [memberCards[j], memberCards[i]]; // Swap elements
+                }
+
+                // Clear the current grid content
+                moreMembersGrid.innerHTML = '';
+
+                // Append the shuffled cards back to the grid
+                memberCards.forEach(card => {
+                    moreMembersGrid.appendChild(card);
+                });
+            }
+        });

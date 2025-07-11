@@ -292,6 +292,7 @@ body {
     justify-content: space-between;
     margin: 40px 0;
     gap: 30px;
+    background: none;
 }
 
 .main-image {
@@ -311,12 +312,14 @@ body {
     flex: 1;
     text-align: left;
     max-width: 45%;
+    background: none;
 }
 
 .main-text p {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 15px;
+    background: none;
 }
 
 /* Gallery styling */
@@ -537,7 +540,7 @@ footer {
 } */
 
 .phone-icon:before {
-    content: '📞';
+    
     margin-right: 10px;
 }
 
@@ -890,7 +893,7 @@ footer {
 }
 
 .developer-credit h1 {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: normal;
     color: #ccc;
     margin: 0;
